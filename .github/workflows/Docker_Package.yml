@@ -18,11 +18,11 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: |
-          docker build . -t myeducationalregistry.azurecr.io/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}
-          docker push myeducationalregistry.azurecr.io/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}     
+          docker build . -t myeducationalregistry.azurecr.io/simpleazurecosmosdbwebapp:v4
+          docker push myeducationalregistry.azurecr.io/simpleazurecosmosdbwebapp:v4     
 
       - uses: azure/webapps-deploy@v2
         with:
           app-name: 'mikael95/simpleazurecosmosdbwebapp'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'mycontainer.azurecr.io/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}'
+          images: 'mycontainer.azurecr.io/simpleazurecosmosdbwebapp:v4
