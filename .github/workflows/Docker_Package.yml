@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: |
-          docker build . -t myeducationalregistry.azurecr.io/myapp:${{ github.sha }}
+          docker build . -t myeducationalregistry.azurecr.io/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}
           docker push myeducationalregistry.azurecr.io/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}     
 
       - uses: azure/webapps-deploy@v2
