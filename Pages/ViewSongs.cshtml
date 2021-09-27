@@ -1,0 +1,28 @@
+﻿@page
+@model WebAppAzureCosmosDb.Pages.AllSongs
+@{
+    ViewData["Title"] = "AllSongs";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Songs in database</h1>
+    <table>
+        <tr>
+            <th>Song</th>
+            <th>Band</th>
+            <th>Singer</th>
+            <th>Link to song</th>
+        </tr>
+        @foreach (var s in Model.Songs)
+        {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Band</td>
+            <td>@s.Singer</td>
+            <td><a href="@s.Link">Link</a></td>
+        </tr>
+        }
+    </table>
+
+</div>
+
