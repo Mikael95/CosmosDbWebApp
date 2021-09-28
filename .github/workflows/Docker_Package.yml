@@ -5,25 +5,34 @@ on: [push]
 jobs:
   docker:
     runs-on: ubuntu-latest
+    env:
+      working-direktory: .
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up for QEMU
-        uses: docker/setup-qemu-action@v1
-      - uses: actions/checkout@v2
-
-      - uses: azure/docker-login@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up for .NET envirement
+        uses: sctions/setup-dotnet@v1
         with:
-          login-server: myeducationalregistry.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-
-      - run: |
-          docker build . -t myeducationalregistry.azurecr.io/simpleazurecosmosdbwebapp:${{ github.sha }}
-          docker push myeducationalregistry.azurecr.io/simpleazurecosmosdbwebapp:${{ github.sha }}     
-
-      - uses: azure/webapps-deploy@v2
+          dotnet version: ${ { env.DOTNET_VERSION } }
+          
+      - name: Build
+        run: dotnet build
+        
+      - name: Github login  
+      - uses: docker/login-action@1.10.0
         with:
-          app-name: 'songdatabase'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'mycontainer.azurecr.io/simpleazurecosmosdbwebapp:${{ github.sha }}'
+          registry: ghcr.io
+          username: ${ {  github.actor } }
+          password: ${ { secrets.REGISTRY_PASSWORD } }
+        
+      - name: build/push container
+        id: docker-build
+        uses: docker/build-push-action@v2.7.0
+        with:
+          push: true
+          context: ${ { env.working.directory } }
+          tags: |
+            ghcr.io/mikael95/simpleazurecosmosdbwebapp:latest
+            ghcr.io/mikael95/simpleazurecosmosdbwebapp:${ { github.run_number } }
+          
+        
