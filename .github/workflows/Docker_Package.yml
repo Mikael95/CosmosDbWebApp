@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: action/checkout@v1
+      - uses: actions/checkout
 
       - name: login via azure CLI
         uses: azure/login@v1
