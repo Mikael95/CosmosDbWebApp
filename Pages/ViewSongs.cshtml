@@ -4,24 +4,28 @@
     ViewData["Title"] = "AllSongs";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Songs in database</h1>
-    <table>
-        <tr>
-            <th>Song</th>
-            <th>Band</th>
-            <th>Singer</th>
-            <th>Link to song</th>
-        </tr>
-        @foreach (var s in Model.Songs)
-        {
-        <tr>
-            <td>@s.Name</td>
-            <td>@s.Band</td>
-            <td>@s.Singer</td>
-            <td><a href="@s.Link">Link</a></td>
-        </tr>
-        }
+<h2>Songs in database</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Song</th>
+                <th>Band</th>
+                <th>Singer</th>
+                <th>Link to song</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model.Songs)
+            {
+            <tr>
+                <td>@s.Name</td>
+                <td>@s.Band</td>
+                <td>@s.Singer</td>
+                <td><a href="@s.Link">Play song</a></td>
+            </tr>
+            }
+        </tbody>
     </table>
 
 </div>

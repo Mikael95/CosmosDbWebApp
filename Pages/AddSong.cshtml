@@ -4,15 +4,20 @@
     ViewData["Title"] = "Create";
 }
 
-    <div class="parent">
-        <h1>Add new song</h1>
+    <div style="text-align:center">
+        <h1 class="input-text">Add new song</h1>
         <form class="form" method="post">
             <div class="input-text">
                 <input type="text" asp-for="song.Name" placeholder="Name of song" />
-                <input type="text" asp-for="song.Band" placeholder="Band" />
-                <input type="text" asp-for="song.Singer" placeholder="Singer" />
-
-                <button class="submit-button" type="submit">Add song</button>
             </div>
+            <div class="input-text">
+                <input type="text" asp-for="song.Band" placeholder="Band" />
+            </div>
+            <div class="input-text">
+                <input type="text" asp-for="song.Singer" placeholder="Singer" />
+            </div>
+
+            <button class="input-text" type="submit">Add song</button>
+            
         </form>
     </div>
