@@ -25,4 +25,5 @@ jobs:
           tags: |
             ghcr.io/mikael95/simpleazurecosmosdbwebapp:latest
           
+          
         
