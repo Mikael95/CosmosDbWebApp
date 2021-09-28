@@ -24,6 +24,3 @@ jobs:
           context: ${{ env.working-directory }}
           tags: |
             ghcr.io/mikael95/simpleazurecosmosdbwebapp:latest
-          
-          
-        
