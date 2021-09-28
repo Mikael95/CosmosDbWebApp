@@ -1,5 +1,5 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/action
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy container app to Azure Web App - songdatabase
 
@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://myeducationalregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_bb0cb2dd9d164534be04f2850b229f07 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_cb4a53124ae2455cbcbb8c16f1dcee3c }}
+        registry: https://ghcr.io/mikael95/
+        username: ${{ secrets.AzureAppService_ContainerUsername_45b8cfcca70f4c30aa33085c260e57ab }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e5aa14f226ec428f944c1291426b8421 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: myeducationalregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_bb0cb2dd9d164534be04f2850b229f07 }}/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}
+        tags: ghcr.io/mikael95/${{ secrets.AzureAppService_ContainerUsername_45b8cfcca70f4c30aa33085c260e57ab }}/simpleazurecosmosdbwebapp:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'songdatabase'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d9ba1d0ccab74ce9a6179daad8bafd92 }}
-        images: 'myeducationalregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_bb0cb2dd9d164534be04f2850b229f07 }}/mikael95/simpleazurecosmosdbwebapp:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3a3916f3ae0f4636a841c7e5464dc2b7 }}
+        images: 'ghcr.io/mikael95/${{ secrets.AzureAppService_ContainerUsername_45b8cfcca70f4c30aa33085c260e57ab }}/simpleazurecosmosdbwebapp:${{ github.sha }}'
