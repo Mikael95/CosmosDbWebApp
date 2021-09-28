@@ -23,6 +23,7 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: 'mikael95/simpleazurecosmosdbwebapp'
+          app-name: 'songdatabase'
+          slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'mycontainer.azurecr.io/simpleazurecosmosdbwebapp:v4'
