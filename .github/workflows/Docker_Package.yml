@@ -3,13 +3,14 @@ name: Build Docker
 on: [push]
 
 jobs:
-  docker:
+  build-and-push-package:
     runs-on: ubuntu-latest
     env:
       working-direktory: .
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
       - name: Set up for .NET envirement
         uses: actions/setup-dotnet@v1
         with:
