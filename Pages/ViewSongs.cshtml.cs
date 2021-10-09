@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleAzureCosmosDbWebApp.Models;
 using SimpleAzureCosmosDbWebApp.Services;
 
-namespace WebAppAzureCosmosDb.Pages
+namespace SimpleAzureCosmosDbWebApp.Pages
 {
 
     public class AllSongs : PageModel

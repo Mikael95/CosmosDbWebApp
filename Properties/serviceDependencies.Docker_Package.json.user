@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2021-10-09T08:27:54.4419639Z"
+    },
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2021-10-09T08:26:05.8594949Z"
+    },
+    "cosmosdb1": {
+      "restored": true,
+      "restoreTime": "2021-10-09T08:26:23.1387766Z"
+    }
+  },
+  "parameters": {
+    "cosmosdb1.resourceGroupName": {
+      "Name": "cosmosdb1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "LearnCosmosDB"
+    },
+    "appInsights1.subscriptionId": {
+      "Name": "appInsights1.subscriptionId",
+      "Type": "subscription",
+      "Value": "7c143aeb-9e78-41f6-ae86-36ffbae6933f"
+    },
+    "appInsights1.resourceGroupName": {
+      "Name": "appInsights1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "postsongstobandsdatabase"
+    },
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "appsvc_windows_centralus"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
+      "Type": "subscription",
+      "Value": "7c143aeb-9e78-41f6-ae86-36ffbae6933f"
+    },
+    "cosmosdb1.subscriptionId": {
+      "Name": "cosmosdb1.subscriptionId",
+      "Type": "subscription",
+      "Value": "7c143aeb-9e78-41f6-ae86-36ffbae6933f"
+    }
+  }
+}

@@ -3,21 +3,31 @@
 @{
     ViewData["Title"] = "Create";
 }
+    
+	<div class="container">
+	<form>
+		<div class="field" tabindex="1">
+			<label for="song name">
+				<i class="far fa-user"></i>Song name
+			</label>
+			<input name="song" type="text" asp-for="song.Name" required>
+		</div>
+		<div class="field" tabindex="2">
+			<label for="band">
+				<i class="far fa-envelope"></i>Band name
+			</label>
+			<input name="band" type="text" asp-for="song.Band" required>
+		</div>
+		<div class="field" tabindex="3">
+			<label for="singer">
+				<i class="far fa-edit"></i>Singer
+			</label>
+			<input name="singer" type="text" asp-for="song.Singer" required>
+		</div>
+		<button type="submit">Add new song</button>
+	</form>
+</div>
 
-    <div style="text-align:center">
-        <h1 class="input-text">Add new song</h1>
-        <form class="form" method="post">
-            <div class="input-text">
-                <input type="text" asp-for="song.Name" placeholder="Name of song" />
-            </div>
-            <div class="input-text">
-                <input type="text" asp-for="song.Band" placeholder="Band" />
-            </div>
-            <div class="input-text">
-                <input type="text" asp-for="song.Singer" placeholder="Singer" />
-            </div>
+<!-- This is not part of Pen -->
+<a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
 
-            <button class="input-text" type="submit">Add song</button>
-            
-        </form>
-    </div>
